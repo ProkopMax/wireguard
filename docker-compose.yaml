@@ -1,0 +1,21 @@
+---
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ALPINEVER: 3.20
+    environment:
+      - TZ=Europe/Amsterdam
+      - WGDIR=/etc/wireguard
+    #restart: unless-stopped
+    expose:
+      - 22222/udp
+      - 33333/udp
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    ports:
+      - "22222:22222/udp"
+      - "33333:33333/udp"
