@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        ALPINEVER: 3.20
+        ALPINEVER: "3.20"
     environment:
       - TZ=Europe/Amsterdam
       - WGDIR=/etc/wireguard
